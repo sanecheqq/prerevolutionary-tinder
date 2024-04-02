@@ -5,6 +5,7 @@ public enum BotState {
     SET_GENDER,
     SET_NAME,
     SET_DESCRIPTION,
+    SET_MATE_GENDER,
     MY_PROFILE,
     LIKES,
     SEARCHING,
