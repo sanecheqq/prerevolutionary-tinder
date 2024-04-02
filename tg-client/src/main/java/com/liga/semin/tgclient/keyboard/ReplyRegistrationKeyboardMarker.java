@@ -12,28 +12,28 @@ import java.util.List;
 @Component
 public class ReplyRegistrationKeyboardMarker {
     public ReplyKeyboardMarkup getRegistrationKeyboard() {
-        KeyboardRow row1 = new KeyboardRow();
+        var row1 = new KeyboardRow();
         row1.add(new KeyboardButton(ButtonName.REGISTER.getName()));
-
-        List<KeyboardRow> keyboard = List.of(row1);
-
-        final ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
-        replyKeyboardMarkup.setKeyboard(keyboard);
-        replyKeyboardMarkup.setSelective(true);
-        replyKeyboardMarkup.setResizeKeyboard(true);
-        replyKeyboardMarkup.setOneTimeKeyboard(true);
-
-        return replyKeyboardMarkup;
+        return buildOneRowKeyboard(row1);
     }
 
     public ReplyKeyboard getGenderKeyboard() {
-        KeyboardRow row1 = new KeyboardRow();
+        var row1 = new KeyboardRow();
         row1.add(new KeyboardButton(ButtonName.MALE.getName()));
         row1.add(new KeyboardButton(ButtonName.FEMALE.getName()));
+        return buildOneRowKeyboard(row1);
+    }
 
+    public ReplyKeyboard getGoToMainMenuKeyboard() {
+        var row1 = new KeyboardRow();
+        row1.add(new KeyboardButton(ButtonName.GO_TO_MAIN_MENU.getName()));
+        return buildOneRowKeyboard(row1);
+    }
+
+    private static ReplyKeyboardMarkup buildOneRowKeyboard(KeyboardRow row1) {
         List<KeyboardRow> keyboard = List.of(row1);
 
-        final ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+        final var replyKeyboardMarkup = new ReplyKeyboardMarkup();
         replyKeyboardMarkup.setKeyboard(keyboard);
         replyKeyboardMarkup.setSelective(true);
         replyKeyboardMarkup.setResizeKeyboard(true);
@@ -42,8 +42,10 @@ public class ReplyRegistrationKeyboardMarker {
     }
 
     public ReplyKeyboard removeReplyKeyboard() {
-        ReplyKeyboardRemove replyKeyboardRemove = new ReplyKeyboardRemove();
+        var replyKeyboardRemove = new ReplyKeyboardRemove();
         replyKeyboardRemove.setRemoveKeyboard(true);
         return replyKeyboardRemove;
     }
+
+
 }
