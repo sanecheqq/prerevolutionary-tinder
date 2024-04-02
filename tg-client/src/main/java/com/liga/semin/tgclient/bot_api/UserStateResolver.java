@@ -31,7 +31,9 @@ public class UserStateResolver {
         Long userId = message.getFrom().getId();
         String userText = getText(update);
         BotState botState = userStates.getOrDefault(userText, tmpStorage.getState(userId));
-        tmpStorage.setState(userId, botState);
+        if (tmpStorage.getState(userId).ordinal() <= botState.ordinal()) { // кейс, чтобы в случае ввода /start во время/после реги, пользака не отбросило назад
+            tmpStorage.setState(userId, botState);
+        }
         return handlingResolver.resolveHandler(botState, update);
     }
 
