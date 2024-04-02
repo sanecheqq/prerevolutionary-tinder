@@ -1,6 +1,7 @@
 package com.liga.semin.tgclient.temporary_storage;
 
 import com.liga.semin.tgclient.bot_api.BotState;
+import com.liga.semin.tgclient.model.UserDto;
 
 /**
  * Временное хранилище данных юзера на процесс регистрации.
@@ -19,4 +20,8 @@ public interface TemporaryUserStateStorage {
      * @param botState устанавливаемое состояние бота
      */
     void setState(Long userId, BotState botState);
+
+    boolean containsUser(Long userId);
+
+    UserDto getUser(Long userId);
 }
