@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="migration1_create_tables" author="sanecheqq">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="users"/>
+            </not>
+        </preConditions>
+        <createTable tableName="users">
+            <column name="id" type="varchar(36)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="users_pk"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(300)"/>
+            <column name="gender" type="varchar(50)"/>
+            <column name="mate_gender" type="varchar(50)"/>
+        </createTable>
+
+        <createTable tableName="users_likes" author="sanecheqq">
+            <column name="from_user" type="varchar(36)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="likes_pk"/>
+            </column>
+            <column name="to_user" type="varchar(36)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="likes_pk"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="users_likes"
+                                 baseColumnNames="from_user"
+                                 constraintName="fk_likes_from_users"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="users_likes"
+                                 baseColumnNames="to_user"
+                                 constraintName="fk_likes_to_users"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+
+</databaseChangeLog>
