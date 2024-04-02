@@ -1,1 +1,3 @@
 rootProject.name = 'prerevolutionary-tinder'
+include 'tg-client'
+include 'server'
