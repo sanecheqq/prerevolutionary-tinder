@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: tg-client
+
+server:
+  port: 8080
+
+bot.name: prerevol_tinder_bot
+bot.token: 6331531371:AAGHnfIFk85BjRfSX7cntF14nXuHP_oZ30c
+
