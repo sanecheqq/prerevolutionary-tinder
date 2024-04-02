@@ -23,9 +23,7 @@ public class ResetUserProfileHandler implements MessageHandler {
         var chatId = UpdateProcessor.getChatId(update);
         var userId = UpdateProcessor.getUserId(update);
 
-        tmpStorage.setState(userId, BotState.INIT); // след. этап - регистрация заново
-
-
+        tmpStorage.removeUser(userId);
         SendMessage reply = new SendMessage(chatId, "Данные вашего профиля сброшены за исключением ваших любимцев. Зарегистрируйтесь заново");
         reply.setReplyMarkup(replyRegistrationKeyboard.getRegistrationKeyboard());
         return reply;

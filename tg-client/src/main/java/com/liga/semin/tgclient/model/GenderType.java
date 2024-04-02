@@ -1,9 +1,12 @@
 package com.liga.semin.tgclient.model;
 
+import lombok.Getter;
+
+@Getter
 public enum GenderType {
     MALE("Сударъ"),
     FEMALE("Сударыня"),
-    ALL("Все");
+    ALL("Всех");
 
     private String gender;
     GenderType(String gender) {
@@ -14,7 +17,7 @@ public enum GenderType {
         return switch (gender) {
             case "Сударъ" -> MALE;
             case "Сударыня" -> FEMALE;
-            case "Все" -> ALL;
+            case "Всех" -> ALL;
             default -> throw new IllegalArgumentException("Неверный пол");
         };
     }

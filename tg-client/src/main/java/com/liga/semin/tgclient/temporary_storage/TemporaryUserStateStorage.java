@@ -24,4 +24,6 @@ public interface TemporaryUserStateStorage {
     boolean containsUser(Long userId);
 
     UserDto getUser(Long userId);
+
+    void removeUser(Long userId);
 }

@@ -29,9 +29,16 @@ public class TemporaryUserStateStorageImpl implements TemporaryUserStateStorage 
         return usersProfiles.containsKey(userId);
     }
 
+
     @Override
     public UserDto getUser(Long userId) {
         usersProfiles.putIfAbsent(userId, new UserDto());
         return usersProfiles.get(userId);
+    }
+
+    @Override
+    public void removeUser(Long userId) {
+        botStates.put(userId, BotState.INIT);
+        usersProfiles.put(userId,new UserDto());
     }
 }
