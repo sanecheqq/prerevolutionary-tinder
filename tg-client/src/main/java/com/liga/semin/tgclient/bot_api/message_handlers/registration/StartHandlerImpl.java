@@ -2,6 +2,7 @@ package com.liga.semin.tgclient.bot_api.message_handlers.registration;
 
 import com.liga.semin.tgclient.bot_api.BotState;
 import com.liga.semin.tgclient.bot_api.message_handlers.MessageHandler;
+import com.liga.semin.tgclient.external_service.ExternalServerService;
 import com.liga.semin.tgclient.keyboard.ReplyRegistrationKeyboardMarker;
 import com.liga.semin.tgclient.model.UserDto;
 import com.liga.semin.tgclient.temporary_storage.TemporaryUserStateStorage;
@@ -18,13 +19,14 @@ public class StartHandlerImpl implements MessageHandler {
     private final BotState handlerState = BotState.INIT;
     private final TemporaryUserStateStorage tmpStorage;
     private final ReplyRegistrationKeyboardMarker replyRegistrationKeyboard;
+    private final ExternalServerService externalServerService;
 
     @Override
     public BotApiMethod<?> handleUpdate(Update update) {
         var chatId = UpdateProcessor.getChatId(update);
         var userId = UpdateProcessor.getUserId(update);
 
-        UserDto userDto = null; // externalServer.findUserById(userId); // todo: полагаю, что здесь необходимо будет чекнуть пользака на сервере;
+        UserDto userDto = externalServerService.getUserById(userId); // externalServer.findUserById(userId); // todo: полагаю, что здесь необходимо будет чекнуть пользака на сервере;
         SendMessage reply;
         if (userDto != null) {
             reply = new SendMessage(chatId, "Вы уже зарегистрированы. Переходите в главное меню");

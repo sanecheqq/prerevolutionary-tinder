@@ -24,7 +24,7 @@ public class NameHandlerImpl implements MessageHandler {
         var chatId = UpdateProcessor.getChatId(update);
         var userId = UpdateProcessor.getUserId(update);
 
-        tmpStorage.getUser(userId).setUserGender(GenderType.getGenderType(UpdateProcessor.getAnswer(update)));
+        tmpStorage.getUser(userId).setGender(GenderType.getGenderType(UpdateProcessor.getAnswer(update)));
         tmpStorage.setState(userId, BotState.SET_DESCRIPTION); // след. этап - добавление описания.
         SendMessage reply = new SendMessage(String.valueOf(chatId), "Как вас величать?");
         reply.setReplyMarkup(replyRegistrationKeyboardMarker.removeReplyKeyboard());

@@ -2,6 +2,7 @@ package com.liga.semin.tgclient.bot_api.message_handlers.registration;
 
 import com.liga.semin.tgclient.bot_api.BotState;
 import com.liga.semin.tgclient.bot_api.message_handlers.MessageHandler;
+import com.liga.semin.tgclient.external_service.ExternalServerService;
 import com.liga.semin.tgclient.keyboard.ReplyMainMenuKeyboardMarker;
 import com.liga.semin.tgclient.model.GenderType;
 import com.liga.semin.tgclient.model.UserDto;
@@ -19,6 +20,7 @@ public class RegistrationFinishedHandlerImpl implements MessageHandler {
     private final BotState handlerState = BotState.REGISTRATION_FINISHED;
     private final TemporaryUserStateStorage tmpStorage;
     private final ReplyMainMenuKeyboardMarker replyMainKeyboard;
+    private final ExternalServerService externalServerService;
 
     @Override
     public BotApiMethod<?> handleUpdate(Update update) {
@@ -27,8 +29,10 @@ public class RegistrationFinishedHandlerImpl implements MessageHandler {
 
         tmpStorage.getUser(userId).setMateGender(GenderType.getGenderType(UpdateProcessor.getAnswer(update)));
         tmpStorage.setState(userId, BotState.MAIN_MENU); // след. этап - пол товарища
+        UserDto user = externalServerService.postUser(tmpStorage.getUser(userId));
+        tmpStorage.removeUserFromTemporaryStorage(userId); // удаляем пользователя из хранилища, чтобы не засорял, но оставляем в хранилище его состояние
 
-        UserDto user = tmpStorage.getUser(userId);
+        // todo: затем мы с сервера получаем тут профиль пользака в виде картинки
         String profile =  String.format("""
                 Ваша анкета:
                 Вы: %s,
@@ -36,11 +40,10 @@ public class RegistrationFinishedHandlerImpl implements MessageHandler {
                 Ваше описание: %s
                 Кого вы ищите: %s
                 """,
-                user.getUserGender().getGender(), user.getUsername(), user.getDescription(), user.getMateGender().getGender()
+                user.getGender().getGender(), user.getUsername(), user.getDescription(), user.getMateGender().getGender()
         );
         SendMessage reply = new SendMessage(chatId, profile);
         reply.setReplyMarkup(replyMainKeyboard.getMainMenuKeyboard());
-        // todo: полагаю, тут отправляем запрос на сервер - сохраняем пользака и выводим его профиль на холсте
         return reply;
     }
 

@@ -37,8 +37,14 @@ public class TemporaryUserStateStorageImpl implements TemporaryUserStateStorage 
     }
 
     @Override
-    public void removeUser(Long userId) {
+    public void resetUser(Long userId) {
         botStates.put(userId, BotState.INIT);
-        usersProfiles.put(userId,new UserDto());
+        usersProfiles.put(userId, new UserDto());
+        usersProfiles.get(userId).setId(userId);
+    }
+
+    @Override
+    public void removeUserFromTemporaryStorage(Long userId) {
+        usersProfiles.remove(userId);
     }
 }

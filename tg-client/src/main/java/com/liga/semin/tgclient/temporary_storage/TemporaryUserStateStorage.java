@@ -25,5 +25,7 @@ public interface TemporaryUserStateStorage {
 
     UserDto getUser(Long userId);
 
-    void removeUser(Long userId);
+    void resetUser(Long userId);
+
+    void removeUserFromTemporaryStorage(Long userId);
 }
