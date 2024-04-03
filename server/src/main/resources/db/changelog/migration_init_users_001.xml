@@ -12,7 +12,7 @@
             </not>
         </preConditions>
         <createTable tableName="users">
-            <column name="id" type="varchar(36)">
+            <column name="id" type="bigint">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="users_pk"/>
             </column>
             <column name="name" type="varchar(100)">
@@ -24,10 +24,10 @@
         </createTable>
 
         <createTable tableName="users_likes" author="sanecheqq">
-            <column name="from_user" type="varchar(36)">
+            <column name="from_user" type="bigint">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="likes_pk"/>
             </column>
-            <column name="to_user" type="varchar(36)">
+            <column name="to_user" type="bigint">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="likes_pk"/>
             </column>
         </createTable>
