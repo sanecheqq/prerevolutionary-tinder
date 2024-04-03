@@ -1,6 +1,6 @@
 package com.liga.semin.server.service;
 
-import com.liga.semin.server.exception.UserNotFound;
+import com.liga.semin.server.exception.UserNotFoundException;
 import com.liga.semin.server.message.UserDto;
 import com.liga.semin.server.model.GenderType;
 import com.liga.semin.server.model.User;
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
 
     private User findOrElseThrow(Long id) {
         return userRepository.findById(id)
-                .orElseThrow(UserNotFound::new);
+                .orElseThrow(() -> new UserNotFoundException(String.valueOf(id)));
     }
 
 }
