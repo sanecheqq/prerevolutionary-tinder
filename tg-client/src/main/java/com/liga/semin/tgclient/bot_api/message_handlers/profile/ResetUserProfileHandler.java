@@ -23,8 +23,8 @@ public class ResetUserProfileHandler implements MessageHandler {
         var chatId = UpdateProcessor.getChatId(update);
         var userId = UpdateProcessor.getUserId(update);
 
-        tmpStorage.removeUser(userId);
-        SendMessage reply = new SendMessage(chatId, "Данные вашего профиля сброшены за исключением ваших любимцев. Зарегистрируйтесь заново");
+        tmpStorage.resetUser(userId);
+        SendMessage reply = new SendMessage(chatId, "Данные вашего профиля сброшены вместе с вашими любимцами. Зарегистрируйтесь заново");
         reply.setReplyMarkup(replyRegistrationKeyboard.getRegistrationKeyboard());
         return reply;
     }

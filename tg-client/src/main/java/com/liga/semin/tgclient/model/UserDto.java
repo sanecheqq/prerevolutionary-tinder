@@ -1,5 +1,6 @@
 package com.liga.semin.tgclient.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,8 +13,9 @@ import lombok.ToString;
 @ToString
 public class UserDto {
     private long id;
-    private GenderType userGender;
     private String username;
     private String description;
+    private GenderType gender;
+    @JsonProperty("mate_gender")
     private GenderType mateGender;
 }

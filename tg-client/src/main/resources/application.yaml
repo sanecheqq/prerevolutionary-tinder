@@ -7,4 +7,5 @@ server:
 
 bot.name: prerevol_tinder_bot
 bot.token: 6331531371:AAGHnfIFk85BjRfSX7cntF14nXuHP_oZ30c
+server_host: http://localhost:8090
 
