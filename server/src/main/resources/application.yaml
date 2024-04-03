@@ -10,7 +10,7 @@ spring:
     password: ${POSTGRES_PASSWORD}
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     generate-ddl: true
     show-sql: true
 
