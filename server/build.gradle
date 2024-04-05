@@ -15,6 +15,9 @@ configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
+	configureEach {
+		exclude group: "commons-logging", module: "commons-logging"
+	}
 }
 
 repositories {
@@ -22,6 +25,10 @@ repositories {
 }
 
 dependencies {
+	testImplementation 'ch.qos.logback:logback-classic:1.5.0'
+	implementation 'org.slf4j:jcl-over-slf4j:2.0.9'
+
+
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.liquibase:liquibase-core'

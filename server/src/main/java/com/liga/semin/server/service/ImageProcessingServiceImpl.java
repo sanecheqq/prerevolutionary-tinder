@@ -1,6 +1,8 @@
 package com.liga.semin.server.service;
 
 import com.liga.semin.server.exception.ImageProcessingException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
@@ -18,8 +20,12 @@ import java.util.List;
 
 @Service
 public class ImageProcessingServiceImpl implements ImageProcessingService {
+    private static final Logger logger = LoggerFactory.getLogger(ImageProcessingServiceImpl.class);
+
     @Override
     public byte[] putProfileOnImage(String text) {
+        logger.debug("Processing user's profile");
+
         final int body_size_font;
         if (text.length() < 125) {
             body_size_font = 48;
@@ -73,6 +79,8 @@ public class ImageProcessingServiceImpl implements ImageProcessingService {
     }
 
     private static void drawLinesBody(List<TextLayout> linesBody, Graphics2D g2d, float y, FontMetrics bodyMetric) {
+        logger.debug("Drawing user's profile body lines");
+
         for (TextLayout line : linesBody) {
             line.draw(g2d, 15, y + line.getAscent());
             y += bodyMetric.getHeight();
@@ -80,6 +88,8 @@ public class ImageProcessingServiceImpl implements ImageProcessingService {
     }
 
     private static float drawLinesHeader(List<TextLayout> linesHeader, int IMG_WIDTH, Graphics2D g2d, FontMetrics headerMetric) {
+        logger.debug("Drawing user's profile header lines");
+
         float y = 10;
         for (TextLayout line : linesHeader) {
             Rectangle2D bounds = line.getBounds();
@@ -91,6 +101,8 @@ public class ImageProcessingServiceImpl implements ImageProcessingService {
     }
 
     private static List<TextLayout> splitByLines(String str, Font font, final int IMG_WIDTH, FontRenderContext fontRenderContext) {
+        logger.debug("Splitting user's profile by lines");
+
         AttributedString attributedHeader = new AttributedString(str);
         attributedHeader.addAttribute(TextAttribute.FONT, font);
         attributedHeader.addAttribute(TextAttribute.FOREGROUND, Color.BLACK);
