@@ -1,5 +1,6 @@
 package com.liga.semin.server.controller;
 
+import com.liga.semin.server.message.GetProfilesResponse;
 import com.liga.semin.server.message.GetUserProfileResponse;
 import com.liga.semin.server.message.PostFavoriteResponse;
 import com.liga.semin.server.message.UserDto;
@@ -46,8 +47,21 @@ public class UserController {
             @RequestParam(name = "from") Long from,
             @RequestParam(name = "to") Long to
     ) {
-        return ResponseEntity.ok(
-                new PostFavoriteResponse(userService.postFavorite(from, to))
-        );
+        return ResponseEntity.ok(userService.postFavorite(from, to));
+    }
+
+    @GetMapping("/favorite/{id}")
+    public ResponseEntity<GetProfilesResponse> getFavoriteProfiles(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(userService.getFavoriteProfiles(id));
+    }
+
+    @GetMapping("/follower/{id}")
+    public ResponseEntity<GetProfilesResponse> getFollowerProfiles(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(userService.getFollowerProfiles(id));
+    }
+
+    @GetMapping("/mutual/{id}")
+    public ResponseEntity<GetProfilesResponse> getMutualFollowingProfiles(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(userService.getMutualFollowingProfiles(id));
     }
 }

@@ -45,5 +45,5 @@ public class User {
     private Set<User> followers = new HashSet<>();
 
     @Column(name = "search_offset")
-    private int offset;
+    private int searchOffset;
 }
