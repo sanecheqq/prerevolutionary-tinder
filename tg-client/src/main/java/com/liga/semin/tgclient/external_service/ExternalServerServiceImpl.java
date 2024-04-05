@@ -1,5 +1,6 @@
 package com.liga.semin.tgclient.external_service;
 
+import com.liga.semin.tgclient.external_service.message.GetUserProfileResponse;
 import com.liga.semin.tgclient.model.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,6 +22,16 @@ public class ExternalServerServiceImpl implements ExternalServerService {
         URI getUserUri = URI.create(serverHost).resolve("/api/v1/users/" + userId);
         try {
             return restTemplate.getForObject(getUserUri, UserDto.class);
+        } catch (HttpClientErrorException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public GetUserProfileResponse getUserProfileById(Long userId) {
+        URI getUserUri = URI.create(serverHost).resolve("/api/v1/users/profile/" + userId);
+        try {
+            return restTemplate.getForObject(getUserUri, GetUserProfileResponse.class);
         } catch (HttpClientErrorException e) {
             return null;
         }
