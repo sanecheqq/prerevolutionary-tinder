@@ -1,5 +1,6 @@
 package com.liga.semin.tgclient.external_service;
 
+import com.liga.semin.tgclient.external_service.message.GetProfilesResponse;
 import com.liga.semin.tgclient.external_service.message.GetUserProfileResponse;
 import com.liga.semin.tgclient.external_service.message.PostFavoriteResponse;
 import com.liga.semin.tgclient.model.UserDto;
@@ -65,6 +66,36 @@ public class ExternalServerServiceImpl implements ExternalServerService {
                 .toUriString();
         try {
             return restTemplate.postForObject(urlTemplate, null, PostFavoriteResponse.class);
+        } catch (HttpClientErrorException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public GetProfilesResponse getFavoriteProfiles(long from) {
+        URI getFavorites = URI.create(serverHost).resolve("/api/v1/users/favorite/" + from);
+        try {
+            return restTemplate.getForObject(getFavorites, GetProfilesResponse.class);
+        } catch (HttpClientErrorException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public GetProfilesResponse getFollowerProfiles(long from) {
+        URI getFavorites = URI.create(serverHost).resolve("/api/v1/users/follower/" + from);
+        try {
+            return restTemplate.getForObject(getFavorites, GetProfilesResponse.class);
+        } catch (HttpClientErrorException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public GetProfilesResponse getMutualFollowingProfiles(long from) {
+        URI getFavorites = URI.create(serverHost).resolve("/api/v1/users/mutual/" + from);
+        try {
+            return restTemplate.getForObject(getFavorites, GetProfilesResponse.class);
         } catch (HttpClientErrorException e) {
             return null;
         }
