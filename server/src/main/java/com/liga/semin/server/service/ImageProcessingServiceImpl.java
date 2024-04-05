@@ -20,6 +20,14 @@ import java.util.List;
 public class ImageProcessingServiceImpl implements ImageProcessingService {
     @Override
     public byte[] putProfileOnImage(String text) {
+        final int body_size_font;
+        if (text.length() < 125) {
+            body_size_font = 48;
+        } else if (text.length() < 200) {
+            body_size_font = 42;
+        } else {
+            body_size_font = 38;
+        }
         String header;
         int firstEndOfString = text.indexOf("\n");
         if (firstEndOfString == -1) { // если строка одна, то заголовок - первое слово
@@ -43,14 +51,7 @@ public class ImageProcessingServiceImpl implements ImageProcessingService {
             var g2d = (Graphics2D) graphics;
             FontRenderContext fontRenderContext = g2d.getFontRenderContext();
 
-            final int body_size_font;
-            if (text.length() < 125) {
-                body_size_font = 48;
-            } else if (text.length() < 200) {
-                body_size_font = 42;
-            } else {
-                body_size_font = 38;
-            }
+
             Font fontHeader = new Font("Old Standard TT", Font.BOLD, (int) (body_size_font * 1.2));
             Font fontBody = new Font("Old Standard TT", Font.PLAIN, body_size_font);
             FontMetrics headerMetric = graphics.getFontMetrics(fontHeader);
