@@ -11,7 +11,7 @@ import java.util.Map;
 @Component
 public class TemporaryUserStateStorageImpl implements TemporaryUserStateStorage {
     private final Map<Long, BotState> botStates = new HashMap<>();
-    private final Map<Long, UserDto> usersProfiles = new HashMap<>();
+    private final Map<Long, UserDto> usersDtos = new HashMap<>();
 
     @Override
     public BotState getState(Long userId) {
@@ -26,25 +26,25 @@ public class TemporaryUserStateStorageImpl implements TemporaryUserStateStorage 
 
     @Override
     public boolean containsUser(Long userId) {
-        return usersProfiles.containsKey(userId);
+        return usersDtos.containsKey(userId);
     }
 
 
     @Override
     public UserDto getUser(Long userId) {
-        usersProfiles.putIfAbsent(userId, new UserDto());
-        return usersProfiles.get(userId);
+        usersDtos.putIfAbsent(userId, new UserDto());
+        return usersDtos.get(userId);
     }
 
     @Override
     public void resetUser(Long userId) {
         botStates.put(userId, BotState.INIT);
-        usersProfiles.put(userId, new UserDto());
-        usersProfiles.get(userId).setId(userId);
+        usersDtos.put(userId, new UserDto());
+        usersDtos.get(userId).setId(userId);
     }
 
     @Override
     public void removeUserFromTemporaryStorage(Long userId) {
-        usersProfiles.remove(userId);
+        usersDtos.remove(userId);
     }
 }
