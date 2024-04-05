@@ -23,6 +23,8 @@ public class UserStateResolver {
                 "Анкета", BotState.MY_PROFILE,
                 "Любимцы", BotState.LIKES,
                 "Поиск", BotState.SEARCHING,
+                "Вперед", BotState.SEARCHING,
+                "Назад", BotState.SEARCHING,
                 "Перейти в главное меню", BotState.MAIN_MENU,
                 "Сброс данных профиля", BotState.RESET
         );
@@ -33,7 +35,7 @@ public class UserStateResolver {
         Long userId = message.getFrom().getId();
         String userText = getText(update);
         BotState botState = userStates.getOrDefault(userText, tmpStorage.getState(userId));
-        if (tmpStorage.getState(userId).ordinal() <= botState.ordinal()) { // кейс, чтобы в случае ввода /start во время/после реги, пользака не отбросило назад
+        if (!userText.equals("/start") || tmpStorage.getState(userId).ordinal() <= botState.ordinal()) { // кейс, чтобы в случае ввода /start во время/после реги, пользака не отбросило назад
             tmpStorage.setState(userId, botState);
         }
         return handlingResolver.resolveHandler(tmpStorage.getState(userId), update);

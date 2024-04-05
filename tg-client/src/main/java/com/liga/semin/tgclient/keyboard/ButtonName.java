@@ -12,6 +12,8 @@ public enum ButtonName {
     PROFILE("Анкета"),
     LIKES("Любимцы"),
     RESET("Сброс данных профиля"),
+    RIGHT("Вправо"),
+    LEFT("Влево"),
     GO_TO_MAIN_MENU("Перейти в главное меню");
 
     private String name;

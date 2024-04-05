@@ -8,5 +8,7 @@ public interface ExternalServerService {
 
     GetUserProfileResponse getUserProfileById(Long userId);
 
+    GetUserProfileResponse getNextSearchingUserProfileById(Long userId);
+
     UserDto postUser(UserDto userDto);
 }

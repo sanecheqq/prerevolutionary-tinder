@@ -38,6 +38,16 @@ public class ExternalServerServiceImpl implements ExternalServerService {
     }
 
     @Override
+    public GetUserProfileResponse getNextSearchingUserProfileById(Long userId) {
+        URI getUserUri = URI.create(serverHost).resolve("/api/v1/users/searching/" + userId);
+        try {
+            return restTemplate.getForObject(getUserUri, GetUserProfileResponse.class);
+        } catch (HttpClientErrorException e) {
+            return null;
+        }
+    }
+
+    @Override
     public UserDto postUser(UserDto userDto) {
         URI postUserUri = URI.create(serverHost).resolve("/api/v1/users");
         return restTemplate.postForObject(postUserUri, userDto, UserDto.class);
