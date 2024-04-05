@@ -4,7 +4,7 @@ import com.liga.semin.tgclient.bot_api.message_handlers.MessageHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
+import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.List;
@@ -18,10 +18,10 @@ public class MessageHandlingResolver {
 
     @Autowired
     public MessageHandlingResolver(List<MessageHandler> handlersList) {
-        handlers = handlersList.stream().collect(Collectors.toMap(MessageHandler::getHanlderState, v -> v));
+        handlers = handlersList.stream().collect(Collectors.toMap(MessageHandler::getHandlerState, v -> v));
     }
 
-    public BotApiMethod<?> resolveHandler(BotState state, Update update) {
+    public PartialBotApiMethod<?> resolveHandler(BotState state, Update update) {
         return handlers.get(state).handleUpdate(update);
     }
 }

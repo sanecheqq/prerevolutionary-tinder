@@ -23,7 +23,7 @@ public class MainMenuHandlerImpl implements MessageHandler {
     }
 
     @Override
-    public BotState getHanlderState() {
+    public BotState getHandlerState() {
         return handlerState;
     }
 }

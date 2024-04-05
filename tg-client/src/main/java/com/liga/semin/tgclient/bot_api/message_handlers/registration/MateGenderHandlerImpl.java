@@ -23,7 +23,7 @@ public class MateGenderHandlerImpl implements MessageHandler {
         var chatId = UpdateProcessor.getChatId(update);
         var userId = UpdateProcessor.getUserId(update);
 
-        tmpStorage.getUser(userId).setDescription(UpdateProcessor.getAnswer(update));
+        tmpStorage.getUser(userId).setDescription(UpdateProcessor.getAnswer(update).trim());
         tmpStorage.setState(userId, BotState.REGISTRATION_FINISHED); // след. этап - конец регистрации
 
         SendMessage reply = new SendMessage(chatId, "Кого вы ищите?");
@@ -32,7 +32,7 @@ public class MateGenderHandlerImpl implements MessageHandler {
     }
 
     @Override
-    public BotState getHanlderState() {
+    public BotState getHandlerState() {
         return handlerState;
     }
 }

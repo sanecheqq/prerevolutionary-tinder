@@ -30,7 +30,7 @@ public class GenderHandlerImpl implements MessageHandler {
     }
 
     @Override
-    public BotState getHanlderState() {
+    public BotState getHandlerState() {
         return handlerState;
     }
 }

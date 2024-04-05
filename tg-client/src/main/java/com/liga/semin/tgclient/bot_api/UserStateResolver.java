@@ -3,7 +3,7 @@ package com.liga.semin.tgclient.bot_api;
 import com.liga.semin.tgclient.temporary_storage.TemporaryUserStateStorage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
+import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
@@ -28,7 +28,7 @@ public class UserStateResolver {
         );
     }
 
-    public BotApiMethod<?> resolveUser(Update update) {
+    public PartialBotApiMethod<?> resolveUser(Update update) {
         Message message = update.getMessage();
         Long userId = message.getFrom().getId();
         String userText = getText(update);
