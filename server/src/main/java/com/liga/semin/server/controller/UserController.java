@@ -1,5 +1,6 @@
 package com.liga.semin.server.controller;
 
+import com.liga.semin.server.message.GetUserProfileResponse;
 import com.liga.semin.server.message.PostFavoriteResponse;
 import com.liga.semin.server.message.UserDto;
 import com.liga.semin.server.service.UserService;
@@ -18,12 +19,18 @@ public class UserController {
         return ResponseEntity.ok(userService.createUser(user));
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUser(@PathVariable("id") Long id) {
         return ResponseEntity.ok(userService.getUser(id));
     }
+
+    @GetMapping(value = "/profile/{id}")
+    private ResponseEntity<GetUserProfileResponse> getUserProfile(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(userService.getUserProfile(id));
+    }
+
     // todo: update user ???
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable("id") Long id) {
         userService.deleteUser(id);
         return ResponseEntity.ok().build();

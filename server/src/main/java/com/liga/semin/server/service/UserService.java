@@ -1,5 +1,6 @@
 package com.liga.semin.server.service;
 
+import com.liga.semin.server.message.GetUserProfileResponse;
 import com.liga.semin.server.message.UserDto;
 
 public interface UserService {
@@ -10,4 +11,6 @@ public interface UserService {
     UserDto getUser(Long id);
 
     boolean postFavorite(Long from, Long to);
+
+    GetUserProfileResponse getUserProfile(Long id);
 }
