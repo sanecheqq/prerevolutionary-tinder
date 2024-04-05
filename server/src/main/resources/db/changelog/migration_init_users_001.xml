@@ -21,6 +21,7 @@
             <column name="description" type="varchar(300)"/>
             <column name="gender" type="varchar(50)"/>
             <column name="mate_gender" type="varchar(50)"/>
+            <column name="search_offset" type="int"/>
         </createTable>
 
         <createTable tableName="users_likes" author="sanecheqq">

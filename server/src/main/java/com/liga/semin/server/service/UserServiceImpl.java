@@ -8,7 +8,10 @@ import com.liga.semin.server.model.User;
 import com.liga.semin.server.repository.UserRepository;
 import com.liga.semin.server.util.converter.UserToUserDtoConverter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -24,9 +27,10 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setId(userDto.getId());
         user.setName(userDto.getUsername());
-        user.setDescription(userDto.getDescription().substring(0, 300));
+        user.setDescription(userDto.getDescription().substring(0, Math.min(300, userDto.getDescription().length())));
         user.setGender(GenderType.valueOf(userDto.getGender()));
         user.setMateGender(GenderType.valueOf(userDto.getMateGender()));
+        user.setOffset(0);
         return userToUserDtoConverter.convert(userRepository.save(user));
     }
 
@@ -56,6 +60,28 @@ public class UserServiceImpl implements UserService {
                 user.getName(),
                 user.getGender().getGender(),
                 imageProcessingService.putProfileOnImage(user.getDescription())
+        );
+    }
+
+    @Override
+    public GetUserProfileResponse getNextUserProfileWithOffset(Long id) {
+        User user = findOrElseThrow(id);
+        int offset = user.getOffset();
+        List<User> list = userRepository.findNextWithOffset(id, user.getGender(), user.getMateGender(), GenderType.ALL, PageRequest.of(offset, 1));
+        if (list.isEmpty()) { // если стал offset > кол-во пользаков, то вернется пустой список, поэтому начинаем по кругу заново.
+            offset = 0;
+            list = userRepository.findNextWithOffset(id, user.getGender(), user.getMateGender(), GenderType.ALL, PageRequest.of(offset, 1));
+        }
+        if (list.isEmpty()) { // если лист снова пустой, то значит никого не нашли
+            return null;
+        }
+        User nextWithOffset = list.get(0);
+        user.setOffset(offset+1);
+        userRepository.save(user);
+        return new GetUserProfileResponse(
+                nextWithOffset.getName(),
+                nextWithOffset.getGender().getGender(),
+                imageProcessingService.putProfileOnImage(nextWithOffset.getDescription())
         );
     }
 

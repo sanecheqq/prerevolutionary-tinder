@@ -29,6 +29,11 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserProfile(id));
     }
 
+    @GetMapping(value = "/searching/{id}")
+    private ResponseEntity<GetUserProfileResponse> getSearchingUserProfileWithOffset(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(userService.getNextUserProfileWithOffset(id));
+    }
+
     // todo: update user ???
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable("id") Long id) {

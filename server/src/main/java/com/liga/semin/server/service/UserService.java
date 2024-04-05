@@ -13,4 +13,6 @@ public interface UserService {
     boolean postFavorite(Long from, Long to);
 
     GetUserProfileResponse getUserProfile(Long id);
+
+    GetUserProfileResponse getNextUserProfileWithOffset(Long id);
 }

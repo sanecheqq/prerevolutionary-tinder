@@ -43,4 +43,7 @@ public class User {
             joinColumns = @JoinColumn(name = "to_user"),
             inverseJoinColumns = @JoinColumn(name = "from_user"))
     private Set<User> followers = new HashSet<>();
+
+    @Column(name = "search_offset")
+    private int offset;
 }
