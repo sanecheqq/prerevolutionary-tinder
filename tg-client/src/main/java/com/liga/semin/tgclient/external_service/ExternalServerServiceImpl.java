@@ -1,12 +1,14 @@
 package com.liga.semin.tgclient.external_service;
 
 import com.liga.semin.tgclient.external_service.message.GetUserProfileResponse;
+import com.liga.semin.tgclient.external_service.message.PostFavoriteResponse;
 import com.liga.semin.tgclient.model.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 
@@ -51,5 +53,20 @@ public class ExternalServerServiceImpl implements ExternalServerService {
     public UserDto postUser(UserDto userDto) {
         URI postUserUri = URI.create(serverHost).resolve("/api/v1/users");
         return restTemplate.postForObject(postUserUri, userDto, UserDto.class);
+    }
+
+    @Override
+    public PostFavoriteResponse postFavorite(long from, long to) {
+        URI postFavoriteUri = URI.create(serverHost).resolve("/api/v1/users/favorite");
+        String urlTemplate = UriComponentsBuilder.fromHttpUrl(postFavoriteUri.toString())
+                .queryParam("from", from)
+                .queryParam("to", to)
+                .encode()
+                .toUriString();
+        try {
+            return restTemplate.postForObject(urlTemplate, null, PostFavoriteResponse.class);
+        } catch (HttpClientErrorException e) {
+            return null;
+        }
     }
 }
