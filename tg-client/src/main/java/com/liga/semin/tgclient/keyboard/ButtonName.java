@@ -14,6 +14,11 @@ public enum ButtonName {
     RESET("Сброс данных профиля"),
     RIGHT("Вправо"),
     LEFT("Влево"),
+    FOLLOWERS("Выбрали Вас"),
+    FAVORITES("Понравились Вам"),
+    MUTUAL("Взаимный выбор"),
+    FORWARD("Вперед"),
+    BACKWARD("Назад"),
     GO_TO_MAIN_MENU("Перейти в главное меню");
 
     private String name;
