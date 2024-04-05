@@ -57,6 +57,7 @@ public class UserServiceImpl implements UserService {
     public GetUserProfileResponse getUserProfile(Long id) {
         User user = findOrElseThrow(id);
         return new GetUserProfileResponse(
+                user.getId(),
                 user.getName(),
                 user.getGender().getGender(),
                 imageProcessingService.putProfileOnImage(user.getDescription())
@@ -79,6 +80,7 @@ public class UserServiceImpl implements UserService {
         user.setOffset(offset+1);
         userRepository.save(user);
         return new GetUserProfileResponse(
+                nextWithOffset.getId(),
                 nextWithOffset.getName(),
                 nextWithOffset.getGender().getGender(),
                 imageProcessingService.putProfileOnImage(nextWithOffset.getDescription())

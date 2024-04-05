@@ -1,7 +1,8 @@
 package com.liga.semin.server.message;
 
 public record GetUserProfileResponse(
-   String name,
-   String gender,
-   byte[] image
+        long id,
+        String name,
+        String gender,
+        byte[] image
 ) {}
