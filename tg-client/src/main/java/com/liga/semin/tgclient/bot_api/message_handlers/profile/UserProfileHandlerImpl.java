@@ -38,7 +38,7 @@ public class UserProfileHandlerImpl implements MessageHandler {
 
         SendPhoto reply = new SendPhoto();
         reply.setChatId(chatId);
-        reply.setPhoto(new InputFile(is, ""));
+        reply.setPhoto(new InputFile(is, "profile.png"));
         reply.setCaption(profileResponse.gender() + ", " + profileResponse.name());
         reply.setReplyMarkup(replyProfileKeyboard.getProfileKeyboard());
         return reply;

@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setId(userDto.getId());
         user.setName(userDto.getUsername());
-        user.setDescription(userDto.getDescription());
+        user.setDescription(userDto.getDescription().substring(0, 300));
         user.setGender(GenderType.valueOf(userDto.getGender()));
         user.setMateGender(GenderType.valueOf(userDto.getMateGender()));
         return userToUserDtoConverter.convert(userRepository.save(user));

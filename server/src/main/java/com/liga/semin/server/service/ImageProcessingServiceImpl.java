@@ -26,7 +26,7 @@ public class ImageProcessingServiceImpl implements ImageProcessingService {
             int firstSpace = text.indexOf(" ");
             header = text.substring(0, firstSpace == -1 ? text.length() : firstSpace); // если в описании одно слово - оно заголовок
             if (text.equals(header)) {
-                text = "";
+                text = " ";
             } else  {
                 text = text.substring(firstSpace + 1); // min - если вдруг в описании одно слово
             }
@@ -43,7 +43,14 @@ public class ImageProcessingServiceImpl implements ImageProcessingService {
             var g2d = (Graphics2D) graphics;
             FontRenderContext fontRenderContext = g2d.getFontRenderContext();
 
-            final int body_size_font = 40;
+            final int body_size_font;
+            if (text.length() < 125) {
+                body_size_font = 48;
+            } else if (text.length() < 200) {
+                body_size_font = 42;
+            } else {
+                body_size_font = 38;
+            }
             Font fontHeader = new Font("Old Standard TT", Font.BOLD, (int) (body_size_font * 1.2));
             Font fontBody = new Font("Old Standard TT", Font.PLAIN, body_size_font);
             FontMetrics headerMetric = graphics.getFontMetrics(fontHeader);
