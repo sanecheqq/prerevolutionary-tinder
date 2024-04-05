@@ -21,7 +21,7 @@ public class MessageHandlingResolver {
         handlers = handlersList.stream().collect(Collectors.toMap(MessageHandler::getHandlerState, v -> v));
     }
 
-    public PartialBotApiMethod<?> resolveHandler(BotState state, Update update) {
+    public List<PartialBotApiMethod<?>> resolveHandler(BotState state, Update update) {
         return handlers.get(state).handleUpdate(update);
     }
 }

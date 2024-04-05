@@ -5,9 +5,11 @@ import com.liga.semin.tgclient.keyboard.ReplyMainMenuKeyboardMarker;
 import com.liga.semin.tgclient.util.UpdateProcessor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
+import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
+
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
@@ -16,10 +18,10 @@ public class MainMenuHandlerImpl implements MessageHandler {
     private final ReplyMainMenuKeyboardMarker replyMainMenuKeyboard;
 
     @Override
-    public BotApiMethod<?> handleUpdate(Update update) {
+    public List<PartialBotApiMethod<?>> handleUpdate(Update update) {
         SendMessage reply = new SendMessage(UpdateProcessor.getChatId(update), "Вы в главном меню");
         reply.setReplyMarkup(replyMainMenuKeyboard.getMainMenuKeyboard());
-        return reply;
+        return List.of(reply);
     }
 
     @Override

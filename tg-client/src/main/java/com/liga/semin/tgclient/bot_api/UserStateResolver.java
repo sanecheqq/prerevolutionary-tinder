@@ -7,6 +7,7 @@ import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -30,7 +31,7 @@ public class UserStateResolver {
         );
     }
 
-    public PartialBotApiMethod<?> resolveUser(Update update) {
+    public List<PartialBotApiMethod<?>> resolveUser(Update update) {
         Message message = update.getMessage();
         Long userId = message.getFrom().getId();
         String userText = getText(update);

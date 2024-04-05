@@ -16,6 +16,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
@@ -26,7 +27,7 @@ public class UserProfileHandlerImpl implements MessageHandler {
     private final ExternalServerService externalServerService;
 
     @Override
-    public PartialBotApiMethod<?> handleUpdate(Update update) {
+    public List<PartialBotApiMethod<?>> handleUpdate(Update update) {
         var chatId = UpdateProcessor.getChatId(update);
         var userId = UpdateProcessor.getUserId(update);
 
@@ -41,7 +42,7 @@ public class UserProfileHandlerImpl implements MessageHandler {
         reply.setPhoto(new InputFile(is, "profile.png"));
         reply.setCaption(profileResponse.gender() + ", " + profileResponse.name());
         reply.setReplyMarkup(replyProfileKeyboard.getProfileKeyboard());
-        return reply;
+        return List.of(reply);
     }
 
     @Override
