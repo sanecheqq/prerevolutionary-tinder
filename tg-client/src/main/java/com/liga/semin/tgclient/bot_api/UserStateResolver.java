@@ -22,10 +22,8 @@ public class UserStateResolver {
                 "/start", BotState.INIT,
                 "Зарегистрироваться", BotState.SET_GENDER,
                 "Анкета", BotState.MY_PROFILE,
-                "Любимцы", BotState.LIKES,
+                "Любимцы", BotState.FAVORITES_MENU,
                 "Поиск", BotState.SEARCHING,
-                "Вперед", BotState.SEARCHING,
-                "Назад", BotState.SEARCHING,
                 "Перейти в главное меню", BotState.MAIN_MENU,
                 "Сброс данных профиля", BotState.RESET
         );
