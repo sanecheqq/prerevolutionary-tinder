@@ -8,6 +8,8 @@ import com.liga.semin.tgclient.temporary_storage.TemporaryFavoritesStorageImpl;
 import com.liga.semin.tgclient.temporary_storage.TemporaryUserStateStorage;
 import com.liga.semin.tgclient.util.UpdateProcessor;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -26,12 +28,14 @@ public class FavoritesHandlerImpl implements MessageHandler {
     private final TemporaryUserStateStorage tmpStorage;
     private final TemporaryFavoritesStorageImpl favoritesStorage;
     private final ReplyFavoritesKeyboardMarker favoritesKeyboardMarker;
+    private static final Logger logger = LoggerFactory.getLogger(FavoritesHandlerImpl.class);
 
     @Override
     public List<PartialBotApiMethod<?>> handleUpdate(Update update) {
         var chatId = UpdateProcessor.getChatId(update);
         var userId = UpdateProcessor.getUserId(update);
         var answer = UpdateProcessor.getAnswer(update);
+        logger.debug("User {} is on looking favorites / followers / mutual list, handling update with state {}", userId, handlerState);
 
         tmpStorage.setState(userId, handlerState);
 
@@ -39,6 +43,7 @@ public class FavoritesHandlerImpl implements MessageHandler {
         if (profiles.isEmpty()) {
             SendMessage reply = new SendMessage(chatId, "К сожалению, здесь никого нет");
             reply.setReplyMarkup(favoritesKeyboardMarker.getIteratingFavoritesKeyboard());
+            logger.debug("Showing list is empty for user {}", userId);
             return List.of(reply);
         }
         int offset = favoritesStorage.getOffset(userId);
@@ -60,6 +65,8 @@ public class FavoritesHandlerImpl implements MessageHandler {
         InputStream is = new ByteArrayInputStream(profileDto.image());
         reply.setPhoto(new InputFile(is, "profile.png"));
         reply.setReplyMarkup(favoritesKeyboardMarker.getIteratingFavoritesKeyboard());
+        logger.debug("Showing for user {} profile of user {}", userId, profileDto.caption());
+
         return List.of(reply);
     }
 

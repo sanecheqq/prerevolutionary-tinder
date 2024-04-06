@@ -3,7 +3,7 @@ package com.liga.semin.tgclient.util;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 /**
- * Статический класс для сокращения получения id-шников
+ * Статический класс для сокращения получения информации о пользователе из сущности Update
  */
 public class UpdateProcessor {
 
