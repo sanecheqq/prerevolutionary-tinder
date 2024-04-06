@@ -1,6 +1,9 @@
 package com.liga.semin.tgclient.bot_api;
 
 import com.liga.semin.tgclient.bot_config.BotConfig;
+import com.liga.semin.tgclient.util.UpdateProcessor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -16,6 +19,8 @@ import java.util.List;
 public class Bot extends TelegramLongPollingBot {
     private final BotConfig botConfig;
     private final UserStateResolver userStateResolver;
+    private static final Logger logger = LoggerFactory.getLogger(Bot.class);
+
 
     @Autowired
     public Bot(BotConfig botConfig, UserStateResolver userStateResolver) {
@@ -31,12 +36,17 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
+        var userId = UpdateProcessor.getUserId(update);
+        var chatId = UpdateProcessor.getChatId(update);
+        logger.info("Got update from user {}, chatID {}", userId, chatId);
         List<PartialBotApiMethod<?>> replies = userStateResolver.resolveUser(update);
         for (var reply : replies) {
             try {
                 if (reply instanceof SendPhoto) {
+                    logger.info("Sending reply Photo from user {}, chatID {}", userId, chatId);
                     execute((SendPhoto) reply);
                 } else {
+                    logger.info("Sending reply Message from user {}, chatID {}", userId, chatId);
                     execute((SendMessage) reply);
                 }
             } catch (TelegramApiException e) {
