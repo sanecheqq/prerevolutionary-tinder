@@ -24,15 +24,24 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final UserToUserDtoConverter userToUserDtoConverter;
     private final ImageProcessingService imageProcessingService;
+    private final TranslatorService translatorService;
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
     public UserDto createUser(UserDto userDto) {
-        // todo: перед сохранением прогонять имя + описание через транслятор
         User user = new User();
         user.setId(userDto.getId());
-        user.setName(userDto.getUsername());
-        user.setDescription(userDto.getDescription().substring(0, Math.min(300, userDto.getDescription().length())));
+        user.setName(translatorService.translateTextToOldRussian(userDto.getUsername()));
+        var description = userDto.getDescription().substring(0, Math.min(300, userDto.getDescription().length()));
+        int firstLineEnd = description.indexOf("\n");
+        if (firstLineEnd != -1) {
+            String firstLineTranslated = translatorService.translateTextToOldRussian(description.substring(0, firstLineEnd));
+            description = translatorService.translateTextToOldRussian(description.substring(firstLineEnd+1));
+            description = firstLineTranslated + "\n" + description;
+        } else {
+            description = translatorService.translateTextToOldRussian(description);
+        }
+        user.setDescription(description);
         user.setGender(GenderType.valueOf(userDto.getGender()));
         user.setMateGender(GenderType.valueOf(userDto.getMateGender()));
         user.setSearchOffset(0);
