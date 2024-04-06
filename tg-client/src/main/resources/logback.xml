@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<configuration>
+    <import class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"/>
+    <import class="ch.qos.logback.core.rolling.RollingFileAppender"/>
+    <import class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"/>
+    <import class="ch.qos.logback.core.ConsoleAppender"/>
+    <import class="ch.qos.logback.classic.filter.ThresholdFilter"/>
+
+    <property name="LOG_HOME"  value="tg-client/src/main/resources/logs" />
+
+    <appender name="consoleAppender" class="ConsoleAppender">
+        <encoder>
+            <Pattern>.%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg %n
+            </Pattern>
+        </encoder>
+        <filter class="ThresholdFilter">
+            <level>TRACE</level>
+        </filter>
+    </appender>
+    <appender name="debugFileAppender" class="RollingFileAppender">
+        <File>${LOG_HOME}/debug/client-debug.log</File>
+        <rollingPolicy class="TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/debug/client-debug.%d{dd-MM-yyyy}.log</fileNamePattern>
+
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <filter class="ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder class="PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss.SSS} [%thread] [%-5level] %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="infoFileAppender" class="RollingFileAppender">
+        <file>${LOG_HOME}/info/client-info.log</file>
+        <rollingPolicy class="TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/info/client-info.%d{dd-MM-yyyy}.log</fileNamePattern>
+
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <filter class="ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <encoder class="PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss.SSS} [%thread] [%-5level] %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.liga.semin.tgclient" additivity="true">
+        <level value="DEBUG" />
+        <appender-ref ref="debugFileAppender"/>
+    </logger>
+
+    <logger name="com.liga.semin.tgclient.bot_api" additivity="true">
+        <level value="INFO" />
+        <appender-ref ref="infoFileAppender"/>
+    </logger>
+
+    <root>
+        <level value="INFO" />
+        <appender-ref ref="consoleAppender" />
+        <appender-ref ref="infoFileAppender"/>
+    </root>
+</configuration>

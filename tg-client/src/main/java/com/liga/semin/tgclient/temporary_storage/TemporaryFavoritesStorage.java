@@ -4,12 +4,37 @@ import com.liga.semin.tgclient.external_service.message.ProfileDto;
 
 import java.util.List;
 
+/**
+ * Временное хранилище для списков избранных / фолловеров / взаимностей
+ * В каждый момент для каждого пользователя здесь может только один список из перечисленных в зависимости от того,
+ * какую категорию отображения пользователь выберет.
+ */
 public interface TemporaryFavoritesStorage {
-    public void addProfiles(long id, List<ProfileDto> list);
+    /**
+     * Добавляет список профилей в хранилище
+     * @param id идентификатор пользователя, для которого сохраняется список
+     * @param list добавляемый в хранилище список
+     */
+    void addProfiles(long id, List<ProfileDto> list);
 
-    public List<ProfileDto> getProfiles(long id);
+    /**
+     * Метод для получения списка для отображения в любимцах
+     * @param id пользователь, для которого берется список
+     * @return список профилей других пользователей (любимцев)
+     */
+    List<ProfileDto> getProfiles(long id);
 
-    public int getOffset(long id);
+    /**
+     * Возвращает сдвиг для определенного пользователя относительно сохраненного списка любимцев
+     * @param id пользователь, для которого берется сдвиг
+     * @return числовое значение сдвига
+     */
+    int getOffset(long id);
 
-    public void putOffset(long id, int offset);
+    /**
+     * Обновляет значение сдвига. Необходим, т. к. пользователь может осуществлять сдвиг как вперед, так и назад по списку любимцев.
+     * @param id пользователь, для которого сохраняется сдвиг
+     * @param offset новое значение сдвига
+     */
+    void putOffset(long id, int offset);
 }
