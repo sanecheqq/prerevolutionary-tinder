@@ -54,7 +54,7 @@
         <appender-ref ref="debugFileAppender"/>
     </logger>
 
-    <logger name="com.liga.semin.tgclient.bot_api" additivity="true">
+    <logger name="com.liga.semin.tgclient" additivity="true">
         <level value="INFO" />
         <appender-ref ref="infoFileAppender"/>
     </logger>
@@ -62,6 +62,5 @@
     <root>
         <level value="INFO" />
         <appender-ref ref="consoleAppender" />
-        <appender-ref ref="infoFileAppender"/>
     </root>
 </configuration>
