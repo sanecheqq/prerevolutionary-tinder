@@ -75,26 +75,21 @@ public class TranslatorServiceImpl implements TranslatorService {
         var sb = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
             char cur = text.charAt(i);
+            char curLC = Character.toLowerCase(cur);
+            char hardSign = convertToTheSameCase(cur, 'ъ');
+            if (curLC == 'ь') { // кейс, когда нам нужно аппендить не текущую букву или символ, а твердый знак вместо нее
+                sb.append(hardSign);
+                continue;
+            }
             sb.append(cur);
             if (!Character.isLetter(cur))
                 continue;
-            if (i+1 < text.length() && !vowels.contains(cur) && !Character.isLetter(text.charAt(i+1)))
-                sb.append('ъ');
-            else if (i == text.length() - 1 && !vowels.contains(cur))
-                sb.append('ъ');
+            if (i+1 < text.length() && !vowels.contains(curLC) && !Character.isLetter(text.charAt(i+1)))
+                sb.append(hardSign);
+            else if (i == text.length() - 1 && !vowels.contains(curLC))
+                sb.append(hardSign);
         }
         return sb.toString();
-//
-//        var words = text.split("\\s");
-//        for (var word : words) {
-//            var wordLC = word.toLowerCase();
-//            sb.append(word);
-//           if (!vowels.contains(wordLC.charAt(wordLC.length() - 1)))
-//               sb.append('ъ');
-//           sb.append(' ');
-//        }
-//        sb.deleteCharAt(sb.length() - 1); // удаляем последний пробел
-//        return sb.toString();
     }
 
 
