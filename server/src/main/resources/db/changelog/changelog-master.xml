@@ -4,7 +4,9 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-    <include file="migration_init_users_001.xml" relativeToChangelogFile="true"/>
-    <include file="migration_fill_users_002.xml" relativeToChangelogFile="true"/>
+    <include file="migration_create_table_users_001.xml" relativeToChangelogFile="true"/>
+    <include file="migration_fill_table_users_002.xml" relativeToChangelogFile="true"/>
+    <include file="migration_create_tables_old_words_003.xml" relativeToChangelogFile="true"/>
+    <include file="migration_fill_tables_old_words_004.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

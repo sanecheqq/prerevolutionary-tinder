@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="migration3_create_table_words" author="sanecheqq">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="words"/>
+            </not>
+        </preConditions>
+        <createTable tableName="phita_words">
+            <column name="word" type="varchar(100)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="phita_words_pk"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="yat_words">
+            <column name="word" type="varchar(100)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="yat_words_pk"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
