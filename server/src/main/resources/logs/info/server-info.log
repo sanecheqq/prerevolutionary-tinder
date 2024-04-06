@@ -1,143 +1,89 @@
-20:51:41.115 [main] [INFO ] c.l.semin.server.ServerApplication - Starting ServerApplication using Java 17.0.10 with PID 21988 (C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder\server\build\classes\java\main started by user in C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder) 
-20:51:41.117 [main] [INFO ] c.l.semin.server.ServerApplication - No active profile set, falling back to 1 default profile: "default" 
-20:51:41.705 [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
-20:51:41.761 [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface. 
-20:51:42.174 [main] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8090 (http) 
-20:51:42.182 [main] [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
-20:51:42.186 [main] [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat] 
-20:51:42.186 [main] [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19] 
-20:51:42.237 [main] [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
-20:51:42.237 [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1076 ms 
-20:51:42.346 [main] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-20:51:42.512 [main] [INFO ] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@339f3a55 
-20:51:42.515 [main] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-20:51:42.626 [main] [INFO ] liquibase.database - Set default schema name to public 
-20:51:43.033 [main] [INFO ] liquibase.changelog - Reading from public.databasechangelog 
-20:51:43.078 [main] [INFO ] liquibase.changelog - Reading from public.databasechangelog 
-20:51:43.083 [main] [INFO ] liquibase.util - UPDATE SUMMARY 
-20:51:43.083 [main] [INFO ] liquibase.util - Run:                          0 
-20:51:43.083 [main] [INFO ] liquibase.util - Previously run:               2 
-20:51:43.083 [main] [INFO ] liquibase.util - Filtered out:                 0 
-20:51:43.084 [main] [INFO ] liquibase.util - ------------------------------- 
-20:51:43.084 [main] [INFO ] liquibase.util - Total change sets:            2 
-20:51:43.084 [main] [INFO ] liquibase.util - Update summary generated 
-20:51:43.101 [main] [INFO ] liquibase.lockservice - Successfully released change log lock 
-20:51:43.102 [main] [INFO ] liquibase.command - Command execution complete 
-20:51:43.165 [main] [INFO ] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
-20:51:43.211 [main] [INFO ] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final 
-20:51:43.239 [main] [INFO ] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled 
-20:51:43.440 [main] [INFO ] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer 
-20:51:44.307 [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
-20:51:44.371 [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
-20:51:44.574 [main] [INFO ] o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used. 
-20:51:44.920 [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
-20:51:45.197 [main] [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
-20:51:45.212 [main] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8090 (http) with context path '' 
-20:51:45.220 [main] [INFO ] c.l.semin.server.ServerApplication - Started ServerApplication in 4.489 seconds (process running for 5.135) 
-20:51:54.912 [http-nio-8090-exec-1] [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
-20:51:54.912 [http-nio-8090-exec-1] [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
-20:51:54.913 [http-nio-8090-exec-1] [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms 
-20:51:54.951 [http-nio-8090-exec-1] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
-20:51:59.997 [http-nio-8090-exec-3] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
-20:52:03.063 [http-nio-8090-exec-8] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
-20:52:04.737 [http-nio-8090-exec-10] [INFO ] c.l.s.s.controller.UserController - postFavorite from user 484175925 to user 3 
-20:52:04.765 [http-nio-8090-exec-5] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
-20:52:10.162 [http-nio-8090-exec-6] [INFO ] c.l.s.s.controller.UserController - getFavoriteProfiles by user 484175925 
-20:52:19.446 [http-nio-8090-exec-7] [INFO ] c.l.s.s.controller.UserController - getFollowerProfiles by user 484175925 
-20:52:23.971 [http-nio-8090-exec-2] [INFO ] c.l.s.s.controller.UserController - getMutualFollowingProfiles by user 484175925 
-20:52:56.239 [SpringApplicationShutdownHook] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
-20:52:56.240 [SpringApplicationShutdownHook] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
-20:52:56.245 [SpringApplicationShutdownHook] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
-20:52:58.608 [main] [INFO ] c.l.semin.server.ServerApplication - Starting ServerApplication using Java 17.0.10 with PID 37828 (C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder\server\build\classes\java\main started by user in C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder) 
-20:52:58.608 [main] [INFO ] c.l.semin.server.ServerApplication - Starting ServerApplication using Java 17.0.10 with PID 37828 (C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder\server\build\classes\java\main started by user in C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder) 
-20:52:58.609 [main] [INFO ] c.l.semin.server.ServerApplication - No active profile set, falling back to 1 default profile: "default" 
-20:52:58.609 [main] [INFO ] c.l.semin.server.ServerApplication - No active profile set, falling back to 1 default profile: "default" 
-20:52:59.205 [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
-20:52:59.258 [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface. 
-20:52:59.668 [main] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8090 (http) 
-20:52:59.675 [main] [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
-20:52:59.677 [main] [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat] 
-20:52:59.677 [main] [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19] 
-20:52:59.731 [main] [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
-20:52:59.732 [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1081 ms 
-20:52:59.836 [main] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-20:52:59.984 [main] [INFO ] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@339f3a55 
-20:52:59.985 [main] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-20:53:00.111 [main] [INFO ] liquibase.database - Set default schema name to public 
-20:53:00.522 [main] [INFO ] liquibase.changelog - Reading from public.databasechangelog 
-20:53:00.565 [main] [INFO ] liquibase.changelog - Reading from public.databasechangelog 
-20:53:00.572 [main] [INFO ] liquibase.util - UPDATE SUMMARY 
-20:53:00.572 [main] [INFO ] liquibase.util - Run:                          0 
-20:53:00.572 [main] [INFO ] liquibase.util - Previously run:               2 
-20:53:00.573 [main] [INFO ] liquibase.util - Filtered out:                 0 
-20:53:00.573 [main] [INFO ] liquibase.util - ------------------------------- 
-20:53:00.573 [main] [INFO ] liquibase.util - Total change sets:            2 
-20:53:00.573 [main] [INFO ] liquibase.util - Update summary generated 
-20:53:00.596 [main] [INFO ] liquibase.lockservice - Successfully released change log lock 
-20:53:00.598 [main] [INFO ] liquibase.command - Command execution complete 
-20:53:00.674 [main] [INFO ] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
-20:53:00.729 [main] [INFO ] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final 
-20:53:00.764 [main] [INFO ] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled 
-20:53:01.068 [main] [INFO ] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer 
-20:53:02.100 [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
-20:53:02.175 [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
-20:53:02.396 [main] [INFO ] o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used. 
-20:53:02.759 [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
-20:53:03.051 [main] [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
-20:53:03.066 [main] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8090 (http) with context path '' 
-20:53:03.075 [main] [INFO ] c.l.semin.server.ServerApplication - Started ServerApplication in 4.902 seconds (process running for 5.609) 
-20:53:03.075 [main] [INFO ] c.l.semin.server.ServerApplication - Started ServerApplication in 4.902 seconds (process running for 5.609) 
-20:53:06.593 [http-nio-8090-exec-1] [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
-20:53:06.594 [http-nio-8090-exec-1] [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
-20:53:06.595 [http-nio-8090-exec-1] [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms 
-20:53:06.638 [http-nio-8090-exec-1] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
-20:53:06.638 [http-nio-8090-exec-1] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
-20:53:10.733 [http-nio-8090-exec-4] [INFO ] c.l.s.s.controller.UserController - getFollowerProfiles by user 484175925 
-20:53:10.733 [http-nio-8090-exec-4] [INFO ] c.l.s.s.controller.UserController - getFollowerProfiles by user 484175925 
-20:54:33.558 [SpringApplicationShutdownHook] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
-20:54:33.560 [SpringApplicationShutdownHook] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
-20:54:33.563 [SpringApplicationShutdownHook] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
-20:54:36.082 [main] [INFO ] c.l.semin.server.ServerApplication - Starting ServerApplication using Java 17.0.10 with PID 20816 (C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder\server\build\classes\java\main started by user in C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder) 
-20:54:36.082 [main] [INFO ] c.l.semin.server.ServerApplication - Starting ServerApplication using Java 17.0.10 with PID 20816 (C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder\server\build\classes\java\main started by user in C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder) 
-20:54:36.085 [main] [INFO ] c.l.semin.server.ServerApplication - No active profile set, falling back to 1 default profile: "default" 
-20:54:36.085 [main] [INFO ] c.l.semin.server.ServerApplication - No active profile set, falling back to 1 default profile: "default" 
-20:54:36.712 [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
-20:54:36.765 [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interface. 
-20:54:37.223 [main] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8090 (http) 
-20:54:37.233 [main] [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
-20:54:37.235 [main] [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat] 
-20:54:37.235 [main] [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19] 
-20:54:37.293 [main] [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
-20:54:37.293 [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1160 ms 
-20:54:37.399 [main] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-20:54:37.550 [main] [INFO ] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@cc9ef8d 
-20:54:37.551 [main] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-20:54:37.672 [main] [INFO ] liquibase.database - Set default schema name to public 
-20:54:38.072 [main] [INFO ] liquibase.changelog - Reading from public.databasechangelog 
-20:54:38.113 [main] [INFO ] liquibase.changelog - Reading from public.databasechangelog 
-20:54:38.119 [main] [INFO ] liquibase.util - UPDATE SUMMARY 
-20:54:38.119 [main] [INFO ] liquibase.util - Run:                          0 
-20:54:38.119 [main] [INFO ] liquibase.util - Previously run:               2 
-20:54:38.120 [main] [INFO ] liquibase.util - Filtered out:                 0 
-20:54:38.120 [main] [INFO ] liquibase.util - ------------------------------- 
-20:54:38.120 [main] [INFO ] liquibase.util - Total change sets:            2 
-20:54:38.120 [main] [INFO ] liquibase.util - Update summary generated 
-20:54:38.138 [main] [INFO ] liquibase.lockservice - Successfully released change log lock 
-20:54:38.139 [main] [INFO ] liquibase.command - Command execution complete 
-20:54:38.202 [main] [INFO ] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
-20:54:38.254 [main] [INFO ] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final 
-20:54:38.284 [main] [INFO ] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled 
-20:54:38.498 [main] [INFO ] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer 
-20:54:39.366 [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
-20:54:39.436 [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
-20:54:39.649 [main] [INFO ] o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used. 
-20:54:40.051 [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
-20:54:40.362 [main] [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
-20:54:40.382 [main] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8090 (http) with context path '' 
-20:54:40.391 [main] [INFO ] c.l.semin.server.ServerApplication - Started ServerApplication in 4.74 seconds (process running for 5.371) 
-20:54:40.391 [main] [INFO ] c.l.semin.server.ServerApplication - Started ServerApplication in 4.74 seconds (process running for 5.371) 
-20:54:43.328 [http-nio-8090-exec-2] [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
-20:54:43.328 [http-nio-8090-exec-2] [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
-20:54:43.329 [http-nio-8090-exec-2] [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms 
-20:54:43.373 [http-nio-8090-exec-2] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
-20:54:43.373 [http-nio-8090-exec-2] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
+09:32:06.214 [main] [INFO ] c.l.semin.server.ServerApplication - Starting ServerApplication using Java 17.0.10 with PID 492 (C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder\server\build\classes\java\main started by user in C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder) 
+09:32:06.214 [main] [INFO ] c.l.semin.server.ServerApplication - Starting ServerApplication using Java 17.0.10 with PID 492 (C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder\server\build\classes\java\main started by user in C:\Programming\Projects\liga_internship\java_specialist\prerevolutionary-tinder) 
+09:32:06.223 [main] [INFO ] c.l.semin.server.ServerApplication - No active profile set, falling back to 1 default profile: "default" 
+09:32:06.223 [main] [INFO ] c.l.semin.server.ServerApplication - No active profile set, falling back to 1 default profile: "default" 
+09:32:06.907 [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+09:32:06.966 [main] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface. 
+09:32:07.412 [main] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8090 (http) 
+09:32:07.421 [main] [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"] 
+09:32:07.423 [main] [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat] 
+09:32:07.423 [main] [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19] 
+09:32:07.479 [main] [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+09:32:07.479 [main] [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1213 ms 
+09:32:07.597 [main] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+09:32:07.753 [main] [INFO ] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2dd63e3 
+09:32:07.755 [main] [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+09:32:07.889 [main] [INFO ] liquibase.database - Set default schema name to public 
+09:32:08.315 [main] [INFO ] liquibase.changelog - Creating database history table with name: public.databasechangelog 
+09:32:08.364 [main] [INFO ] liquibase.changelog - Reading from public.databasechangelog 
+09:32:08.465 [main] [INFO ] liquibase.lockservice - Successfully acquired change log lock 
+09:32:08.467 [main] [INFO ] liquibase.command - Using deploymentId: 2385128466 
+09:32:08.468 [main] [INFO ] liquibase.changelog - Reading from public.databasechangelog 
+09:32:08.528 [main] [INFO ] liquibase.changelog - Table users created 
+09:32:08.535 [main] [INFO ] liquibase.changelog - Table users_likes created 
+09:32:08.541 [main] [INFO ] liquibase.changelog - Foreign key constraint added to users_likes (from_user) 
+09:32:08.543 [main] [INFO ] liquibase.changelog - Foreign key constraint added to users_likes (to_user) 
+09:32:08.545 [main] [INFO ] liquibase.changelog - ChangeSet db/changelog/migration_init_users_001.xml::migration1_create_tables::sanecheqq ran successfully in 46ms 
+09:32:08.604 [main] [INFO ] liquibase.changelog - Data loaded from 'classpath:db/data/users.csv' into table 'users' 
+09:32:08.605 [main] [INFO ] liquibase.changelog - ChangeSet db/changelog/migration_fill_users_002.xml::load_data_users::sanecheqq ran successfully in 52ms 
+09:32:08.612 [main] [INFO ] liquibase.util - UPDATE SUMMARY 
+09:32:08.612 [main] [INFO ] liquibase.util - Run:                          2 
+09:32:08.612 [main] [INFO ] liquibase.util - Previously run:               0 
+09:32:08.612 [main] [INFO ] liquibase.util - Filtered out:                 0 
+09:32:08.612 [main] [INFO ] liquibase.util - ------------------------------- 
+09:32:08.612 [main] [INFO ] liquibase.util - Total change sets:            2 
+09:32:08.612 [main] [INFO ] liquibase.util - Update summary generated 
+09:32:08.614 [main] [INFO ] liquibase.command - Update command completed successfully. 
+09:32:08.618 [main] [INFO ] liquibase.lockservice - Successfully released change log lock 
+09:32:08.619 [main] [INFO ] liquibase.command - Command execution complete 
+09:32:08.693 [main] [INFO ] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+09:32:08.751 [main] [INFO ] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final 
+09:32:08.788 [main] [INFO ] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled 
+09:32:09.031 [main] [INFO ] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer 
+09:32:09.895 [main] [INFO ] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+09:32:09.952 [main] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+09:32:10.174 [main] [INFO ] o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used. 
+09:32:10.542 [main] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+09:32:10.835 [main] [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"] 
+09:32:10.851 [main] [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8090 (http) with context path '' 
+09:32:10.859 [main] [INFO ] c.l.semin.server.ServerApplication - Started ServerApplication in 5.07 seconds (process running for 5.68) 
+09:32:10.859 [main] [INFO ] c.l.semin.server.ServerApplication - Started ServerApplication in 5.07 seconds (process running for 5.68) 
+09:33:58.426 [http-nio-8090-exec-1] [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+09:33:58.426 [http-nio-8090-exec-1] [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+09:33:58.427 [http-nio-8090-exec-1] [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms 
+09:33:58.465 [http-nio-8090-exec-1] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
+09:33:58.465 [http-nio-8090-exec-1] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
+09:34:09.040 [http-nio-8090-exec-4] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
+09:34:09.040 [http-nio-8090-exec-4] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
+09:35:05.802 [http-nio-8090-exec-3] [INFO ] c.l.s.s.controller.UserController - createUser with id 484175925 and name Александръ 
+09:35:05.802 [http-nio-8090-exec-3] [INFO ] c.l.s.s.controller.UserController - createUser with id 484175925 and name Александръ 
+09:35:05.863 [http-nio-8090-exec-5] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
+09:35:05.863 [http-nio-8090-exec-5] [INFO ] c.l.s.s.controller.UserController - getUserProfile by user 484175925 
+09:35:15.741 [http-nio-8090-exec-2] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:15.741 [http-nio-8090-exec-2] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:19.967 [http-nio-8090-exec-6] [INFO ] c.l.s.s.controller.UserController - postFavorite from user 484175925 to user 2 
+09:35:19.967 [http-nio-8090-exec-6] [INFO ] c.l.s.s.controller.UserController - postFavorite from user 484175925 to user 2 
+09:35:19.993 [http-nio-8090-exec-7] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:19.993 [http-nio-8090-exec-7] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:22.452 [http-nio-8090-exec-8] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:22.452 [http-nio-8090-exec-8] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:23.556 [http-nio-8090-exec-9] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:23.556 [http-nio-8090-exec-9] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:24.722 [http-nio-8090-exec-10] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:24.722 [http-nio-8090-exec-10] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:26.484 [http-nio-8090-exec-1] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:26.484 [http-nio-8090-exec-1] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:28.730 [http-nio-8090-exec-4] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:28.730 [http-nio-8090-exec-4] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:30.947 [http-nio-8090-exec-3] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:30.947 [http-nio-8090-exec-3] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:33.315 [http-nio-8090-exec-5] [INFO ] c.l.s.s.controller.UserController - postFavorite from user 484175925 to user 5 
+09:35:33.315 [http-nio-8090-exec-5] [INFO ] c.l.s.s.controller.UserController - postFavorite from user 484175925 to user 5 
+09:35:33.329 [http-nio-8090-exec-2] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:33.329 [http-nio-8090-exec-2] [INFO ] c.l.s.s.controller.UserController - getSearchingUserProfileWithOffset by user 484175925 
+09:35:36.609 [http-nio-8090-exec-6] [INFO ] c.l.s.s.controller.UserController - getFavoriteProfiles by user 484175925 
+09:35:36.609 [http-nio-8090-exec-6] [INFO ] c.l.s.s.controller.UserController - getFavoriteProfiles by user 484175925 
+09:35:48.226 [http-nio-8090-exec-7] [INFO ] c.l.s.s.controller.UserController - getFollowerProfiles by user 484175925 
+09:35:48.226 [http-nio-8090-exec-7] [INFO ] c.l.s.s.controller.UserController - getFollowerProfiles by user 484175925 
+09:35:50.862 [http-nio-8090-exec-8] [INFO ] c.l.s.s.controller.UserController - getMutualFollowingProfiles by user 484175925 
+09:35:50.862 [http-nio-8090-exec-8] [INFO ] c.l.s.s.controller.UserController - getMutualFollowingProfiles by user 484175925 

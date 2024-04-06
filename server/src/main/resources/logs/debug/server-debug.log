@@ -1,86 +1,106 @@
-20:51:54.951 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting user profile with id 484175925 
-20:51:54.952 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:51:55.017 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:51:55.309 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:51:55.322 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:51:55.323 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:51:55.327 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:51:59.998 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
-20:51:59.998 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:52:00.080 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 0 
-20:52:00.118 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:52:00.200 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:00.201 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:52:00.201 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:00.207 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:52:03.063 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
-20:52:03.063 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:52:03.068 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 1 
-20:52:03.071 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:52:03.154 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:03.155 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:52:03.155 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:03.160 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:52:04.737 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.service.UserServiceImpl - Posting favorite from user 484175925 to user 3 
-20:52:04.737 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:52:04.740 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 3 in users-table 
-20:52:04.765 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
-20:52:04.765 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:52:04.768 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 2 
-20:52:04.771 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:52:04.854 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:04.856 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:52:04.856 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:04.858 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:52:10.163 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting list of favorite profiles by user 484175925 
-20:52:10.163 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:52:10.167 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:52:10.251 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:10.253 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:52:10.253 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:10.254 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:52:10.310 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:52:10.388 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:10.388 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:52:10.388 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:10.390 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:52:10.449 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:52:10.528 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:10.528 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:52:10.528 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:10.529 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:52:19.446 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting list of followers profiles by user 484175925 
-20:52:19.446 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:52:19.451 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:52:19.537 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:19.537 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:52:19.537 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:19.538 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:52:23.971 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting list of mutual following profiles by user 484175925 
-20:52:23.971 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:52:23.977 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:52:24.059 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:24.059 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:52:24.059 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:52:24.060 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:53:06.639 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting user profile with id 484175925 
-20:53:06.639 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:53:06.709 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:53:07.000 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:53:07.012 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:53:07.013 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:53:07.016 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:53:10.733 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting list of followers profiles by user 484175925 
-20:53:10.733 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:53:10.745 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:53:10.826 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:53:10.827 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:53:10.827 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:53:10.832 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
-20:54:43.373 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting user profile with id 484175925 
-20:54:43.373 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
-20:54:43.432 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
-20:54:43.730 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:54:43.743 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
-20:54:43.744 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
-20:54:43.746 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:33:58.466 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting user profile with id 484175925 
+09:33:58.467 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:34:09.040 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting user profile with id 484175925 
+09:34:09.040 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:05.803 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.service.UserServiceImpl - Creating user with id 484175925 and name Александръ 
+09:35:05.863 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting user profile with id 484175925 
+09:35:05.863 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:05.869 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:06.216 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:06.242 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:06.243 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:06.245 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:15.741 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
+09:35:15.742 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:15.794 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 0 
+09:35:15.803 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:15.883 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:15.884 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:15.884 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:15.889 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:19.967 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.service.UserServiceImpl - Posting favorite from user 484175925 to user 2 
+09:35:19.967 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:19.969 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 2 in users-table 
+09:35:19.993 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
+09:35:19.993 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:19.998 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 1 
+09:35:20.001 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:20.088 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:20.089 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:20.089 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:20.094 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:22.452 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
+09:35:22.452 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:22.457 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 2 
+09:35:22.460 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:22.542 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:22.544 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:22.544 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:22.547 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:23.556 [http-nio-8090-exec-9] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
+09:35:23.556 [http-nio-8090-exec-9] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:23.560 [http-nio-8090-exec-9] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 3 
+09:35:23.563 [http-nio-8090-exec-9] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:23.642 [http-nio-8090-exec-9] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:23.643 [http-nio-8090-exec-9] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:23.643 [http-nio-8090-exec-9] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:23.644 [http-nio-8090-exec-9] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:24.722 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
+09:35:24.722 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:24.727 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 4 
+09:35:24.730 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:24.811 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:24.812 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:24.813 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:24.814 [http-nio-8090-exec-10] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:26.485 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
+09:35:26.485 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:26.490 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 0 
+09:35:26.493 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:26.577 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:26.578 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:26.578 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:26.579 [http-nio-8090-exec-1] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:28.730 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
+09:35:28.730 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:28.734 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 1 
+09:35:28.737 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:28.815 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:28.815 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:28.815 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:28.816 [http-nio-8090-exec-4] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:30.947 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
+09:35:30.947 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:30.950 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 2 
+09:35:30.954 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:31.032 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:31.033 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:31.033 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:31.034 [http-nio-8090-exec-3] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:33.315 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.service.UserServiceImpl - Posting favorite from user 484175925 to user 5 
+09:35:33.316 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:33.317 [http-nio-8090-exec-5] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 5 in users-table 
+09:35:33.330 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting next user profile for searching by user with id 484175925 
+09:35:33.330 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:33.333 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.service.UserServiceImpl - Got next user 484175925 with offset 3 
+09:35:33.336 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:33.421 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:33.422 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:33.422 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:33.423 [http-nio-8090-exec-2] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:36.609 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting list of favorite profiles by user 484175925 
+09:35:36.609 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:36.614 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:36.696 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:36.696 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:36.696 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:36.697 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:36.753 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Processing user's profile 
+09:35:36.835 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:36.835 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile header lines 
+09:35:36.835 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Splitting user's profile by lines 
+09:35:36.836 [http-nio-8090-exec-6] [DEBUG] c.l.s.s.s.ImageProcessingServiceImpl - Drawing user's profile body lines 
+09:35:48.226 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting list of followers profiles by user 484175925 
+09:35:48.226 [http-nio-8090-exec-7] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
+09:35:50.863 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.service.UserServiceImpl - Getting list of mutual following profiles by user 484175925 
+09:35:50.863 [http-nio-8090-exec-8] [DEBUG] c.l.s.s.service.UserServiceImpl - Find by id user 484175925 in users-table 
