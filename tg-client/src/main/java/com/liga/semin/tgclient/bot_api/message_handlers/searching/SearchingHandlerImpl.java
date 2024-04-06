@@ -6,9 +6,10 @@ import com.liga.semin.tgclient.external_service.ExternalServerService;
 import com.liga.semin.tgclient.external_service.message.GetUserProfileResponse;
 import com.liga.semin.tgclient.external_service.message.PostFavoriteResponse;
 import com.liga.semin.tgclient.keyboard.ReplySearchingKeyboardMarker;
-import com.liga.semin.tgclient.temporary_storage.TemporaryUserStateStorage;
 import com.liga.semin.tgclient.util.UpdateProcessor;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -27,16 +28,17 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class SearchingHandlerImpl implements MessageHandler {
     private final BotState handlerState = BotState.SEARCHING;
-    private final TemporaryUserStateStorage tmpStorage;
     private final ReplySearchingKeyboardMarker replySearchingKeyboardMarker;
     private final ExternalServerService externalServerService;
     private final Map<Long, Long> previousProfiles = new HashMap<>(); // храним ID предыдущего показанного профиля, чтобы обработать лайк
+    private static final Logger logger = LoggerFactory.getLogger(SearchingHandlerImpl.class);
 
     @Override
     public List<PartialBotApiMethod<?>> handleUpdate(Update update) {
         var chatId = UpdateProcessor.getChatId(update);
         var userId = UpdateProcessor.getUserId(update);
         var answer = UpdateProcessor.getAnswer(update);
+        logger.debug("User {} in searching. handling update with state {}",userId, handlerState);
 
         List<PartialBotApiMethod<?>> replies = new ArrayList<>();
         if (answer.equals("Вправо")) { // отправляем запрос на лайк пред. показанной анкеты
